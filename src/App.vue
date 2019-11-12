@@ -12,6 +12,9 @@ export default {
 </script>
 
 <style>
+.el-main {
+  padding: 0;
+}
 body {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -33,8 +36,8 @@ li {
     height: 100%;
 }
  ::-webkit-scrollbar {
-  width: 2px;
-  height: 4px;
+  width: 3px;
+  height: 3px;
 }
   ::-webkit-scrollbar-button,
   ::-webkit-scrollbar-button:vertical {

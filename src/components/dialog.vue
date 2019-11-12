@@ -1,6 +1,6 @@
 <template>
   <section>
-    <el-dialog :title="title" :visible="dialogVisible" width="30%" center :before-close="cancer">
+    <el-dialog :title="title" :visible="dialogVisible" :width="width" center :before-close="cancer">
       <el-form :label-position="labelPosition" label-width="80px" :model="formData">
         <template v-for="colConfig in colConfigs">
           <el-form-item :key="colConfig[0]" v-bind="colConfig">
@@ -33,6 +33,10 @@ export default {
     // 表头
     colConfigs: {
       type: Array,
+      default: () => []
+    },
+    width: {
+      type: String,
       default: () => []
     }
   },

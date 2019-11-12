@@ -6,6 +6,7 @@
       :formData="formData"
       :title="title"
       :colConfigs="colConfigs"
+      :width="width"
     />
   </section>
 </template>
@@ -27,10 +28,10 @@ export default {
     this.options = [
       {
         label: "编辑",
-        type: "danger"
+        type: "text"
       },
-      { label: "下载", type: "primary" },
-      { label: "查看版本功能" }
+      { label: "下载", type: "text" },
+      { label: "查看版本功能", type: "text" }
     ];
 
     return {
@@ -61,13 +62,19 @@ export default {
       total: 5,
       dialogVisible: false,
       title: "title",
-      formData: {}
+      formData: {},
+      width: ""
     };
   },
   methods: {
     handleSelectionChange() {},
     handleButton(index, row) {
       console.log(index, row);
+      if (index == 0) {
+        this.width = "30%";
+      } else if (index == 1) {
+        this.width = "70%";
+      }
       this.formData = row;
       this.dialogVisible = true;
     },

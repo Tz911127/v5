@@ -16,7 +16,7 @@
       <template v-for="colConfig in colConfigs">
         <el-table-column sortable :key="colConfig[0]" show-overflow-tooltip v-bind="colConfig"></el-table-column>
       </template>
-      <el-table-column label="操作">
+      <el-table-column label="操作" min-width="100">
         <template slot-scope="scope">
           <el-button
             v-for="(item,index) in options"

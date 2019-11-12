@@ -1,13 +1,13 @@
 <template>
-  <section>
+  <section >
     <el-menu
       :default-active="$route.path"
       class="el-menu-vertical-demo"
       @open="handleOpen"
       @close="handleClose"
-      background-color="#424f63"
+      background-color="#545c64"
       text-color="#fff"
-      active-text-color="#ffd04b"
+      active-text-color="#25d8ef"
       router
       :collapse="this.$store.state.isCollapse"
       :unique-opened="true"
@@ -44,6 +44,7 @@ export default {
   },
   methods: {
     handleOpen(key, keyPath) {
+      // this.handleOpen();
       console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
@@ -51,21 +52,25 @@ export default {
     }
   },
   mounted() {
-    this.isCollapse = this.$store.state.isCollapse;
+    console.log(this);
   }
 };
 </script>
 <style scoped>
 section {
   height: 100%;
+  /* overflow: auto; */
 }
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-  min-width: 200px;
+  width: 200px;
 }
 .el-menu-vertical-demo {
   height: 100%;
   background-color: "#545c64";
   /* text-color: "#fff";
   active-text-color: "#ffd04b"; */
+}
+.el-aside ul {
+  overflow: auto
 }
 </style>

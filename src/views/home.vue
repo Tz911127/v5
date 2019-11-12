@@ -2,10 +2,11 @@
   <div>
     <el-container>
       <el-header>
-        <NavBar />
+        <NavBar @handleOpen = 'handleOpen' />
       </el-header>
       <el-container>
-        <el-aside style="width:auto">
+        <!-- style="width:auto" -->
+        <el-aside style="width:''">
           <SideBar />
         </el-aside>
         <el-main>
@@ -31,12 +32,9 @@ export default {
     };
   },
   methods: {
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
-    }
+   handleOpen(){
+     console.log(13)
+   }
   },
   mounted() {
     // console.log(this.$route);
@@ -47,6 +45,12 @@ export default {
 .el-header {
   background: #409eff;
   padding: 0;
+}
+.el-aside {
+  /* width: 200px!important */
+}
+.el-main {
+  /* width: auto */
 }
 .el-aside,
 .el-main {

@@ -1,12 +1,13 @@
 <template>
   <div>
     <div class="logo">LOGO</div>
-    <i @click="together" class="el-icon-s-grid"></i>
+    <i @click="together()" class="el-icon-s-grid"></i>
     <el-button type="primary" @click="loginOut" style="float:right">退出</el-button>
   </div>
 </template>
 <script>
 export default {
+  props: {},
   data() {
     return {
       isCollapse: true
@@ -15,15 +16,18 @@ export default {
   methods: {
     together() {
       this.$store.commit("change");
+      // this.$parent.$parent.$parent.handleOpen();
+       this.$emit("handleOpen");
     },
     addFun() {
       this.$store.commit("add");
     },
     loginOut() {
       localStorage.removeItem("token");
-      this.$router.replace("/login");
+      this.$router.replace("/");
     }
-  }
+  },
+  mounted() {}
 };
 </script>
 <style scoped>

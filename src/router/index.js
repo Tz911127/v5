@@ -18,6 +18,7 @@ import role from '@/views/role'
 import otherManege from '@/views/otherManege'
 import terOrder from '@/views/terOrder'
 import proOrder from '@/views/proOrder'
+import addBusiness from '@/views/addBusiness'
 
 Vue.use(Router)
 
@@ -36,7 +37,7 @@ export default new Router({
       children: [{
         path: '/homePage',
         component: homePage,
-        name: '首页'
+        name: 'homePage'
       }]
     },
     {
@@ -66,7 +67,18 @@ export default new Router({
       children: [{
         path: '/businessManage',
         component: businessManage,
-        name: '企业管理'
+        name: 'businessManage'
+      }]
+    },
+    {
+      path: '/addBusiness',
+      name: '添加企业',
+      component: home,
+      hidden: true,
+      children: [{
+        path: '/addBusiness',
+        component: addBusiness,
+        name: '添加企业'
       }]
     },
     {
@@ -99,7 +111,7 @@ export default new Router({
       children: [{
         path: '/programManage',
         component: programManage,
-        name: '节目管理'
+        name: '管理节目'
       }, {
         path: '/notice',
         component: notice,
